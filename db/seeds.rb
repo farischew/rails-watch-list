@@ -19,8 +19,8 @@ Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal masterm
 
 
 puts 'Creating List 1'
-List.create(name: 'All time favourites')
+List.create(name: 'All time favourites', list_url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.harpersbazaar.com%2Fculture%2Ffilm-tv%2Fg10201500%2Fbest-classic-movies%2F&psig=AOvVaw3ORQ4xThfrFvfmlEWnJH7f&ust=1678453779746000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjM0Nv1zv0CFQAAAAAdAAAAABAE")
 puts 'Creating List 2'
-List.create(name: 'Superhero Movies')
+List.create(name: 'Superhero Movies', list_url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rollingstone.com%2Ftv-movies%2Ftv-movie-lists%2Fgreatest-superhero-movies-of-all-time-1367814%2F&psig=AOvVaw2WCJk-GZw6bFPX60HfuV9r&ust=1678453807512000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjdzej1zv0CFQAAAAAdAAAAABAE")
 puts 'Creating List 3'
-List.create(name: 'Action Movies')
+List.create(name: 'Action Movies', list_url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcollider.com%2Fmost-violent-action-movies-of-all-time-according-to-reddit%2F&psig=AOvVaw3WdNJrp3k3Wx5Gcvd0375t&ust=1678453830644000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKD_5_P1zv0CFQAAAAAdAAAAABAI")
