@@ -6,6 +6,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @movies = Movie.all
     @bookmarks = Bookmark.find_all(params[:id])
   end
 
