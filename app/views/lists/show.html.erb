@@ -2,7 +2,7 @@
 <h1><%= @list.name %></h1>
 </div>
 
-<div class="container">
+<div class="container position-relative" style="top:120px">
   <div class="cards">
     <% @bookmarks.each do |bookmark| %>
       <div class="card-category">
@@ -14,8 +14,8 @@
               <p><%= @movies.find(bookmark.movie_id).overview %></p>
               <div class="card-footer d-flex">
                 <p><%= bookmark.comment %></p>
-                <button><%= link_to 'Delete', bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
               </div>
+              <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-flat" %>
             </div>
             <h2 class="card-trip-pricing"><%= @movies.find(bookmark.movie_id).rating %></h2>
           </div>
