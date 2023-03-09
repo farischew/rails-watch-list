@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_09_063650) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_09_071406) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,10 +33,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_063650) do
   create_table "movies", force: :cascade do |t|
     t.string "title", null: false
     t.text "overview", null: false
-    t.string "poster_url", null: false
-    t.float "rating", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "poster_url"
+    t.string "rating"
   end
 
   add_foreign_key "bookmarks", "lists"
