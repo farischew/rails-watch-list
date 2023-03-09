@@ -3,6 +3,10 @@
 </div>
 
 <div class="container position-relative" style="top:120px">
+  <div>
+    <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn" %>
+  </div>
+
   <div class="cards">
     <% @bookmarks.each do |bookmark| %>
       <div class="card-category">
@@ -11,7 +15,6 @@
           <div class="card-trip-infos">
             <div>
               <h2><%= @movies.find(bookmark.movie_id).title %>  |  <%= @movies.find(bookmark.movie_id).rating %> ⭐️</h2>
-
               <p><%= @movies.find(bookmark.movie_id).overview %></p>
             </div>
           </div>
