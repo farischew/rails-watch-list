@@ -7,6 +7,10 @@ class ListsController < ApplicationController
 
   def show; end
 
+  def new
+    @list = List.new
+  end
+
   private
 
   def set_list
