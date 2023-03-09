@@ -6,12 +6,20 @@
   <div class="cards">
     <% @bookmarks.each do |bookmark| %>
       <div class="card-category">
-        <p><%= bookmark.comment %></p>
-        <p><%= @movies.find(bookmark.movie_id).title %></p>
-        <p><%= @movies.find(bookmark.movie_id).overview %></p>
-        <p><%= @movies.find(bookmark.movie_id).rating %></p>
-        <p><%= @movies.find(bookmark.movie_id).poster_url %></p>
-        <%= link_to 'Delete', bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <div class="card-trip">
+          <img src="<%= @movies.find(bookmark.movie_id).poster_url %>" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= @movies.find(bookmark.movie_id).title %></h2>
+              <p><%= @movies.find(bookmark.movie_id).overview %></p>
+              <div class="card-footer d-flex">
+                <p><%= bookmark.comment %></p>
+                <button><%= link_to 'Delete', bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+              </div>
+            </div>
+            <h2 class="card-trip-pricing"><%= @movies.find(bookmark.movie_id).rating %></h2>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
