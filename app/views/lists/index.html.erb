@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Full List</h1>
+
+  <div class="card">
+    <% @lists.each do |list| %>
+      <div class="card-category">
+        <%= list.name %>
+      </div>
+    <% end %>
+  </div>
+</div>
