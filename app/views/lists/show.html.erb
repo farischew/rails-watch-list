@@ -10,14 +10,13 @@
           <img src="<%= @movies.find(bookmark.movie_id).poster_url %>" />
           <div class="card-trip-infos">
             <div>
-              <h2><%= @movies.find(bookmark.movie_id).title %></h2>
+              <h2><%= @movies.find(bookmark.movie_id).title %>  |  <%= @movies.find(bookmark.movie_id).rating %> ⭐️</h2>
               <p><%= @movies.find(bookmark.movie_id).overview %></p>
-              <div class="card-footer d-flex">
-                <p><%= bookmark.comment %></p>
-              </div>
-              <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-flat" %>
             </div>
-            <h2 class="card-trip-pricing"><%= @movies.find(bookmark.movie_id).rating %></h2>
+          </div>
+          <div class="card-footer">
+            <i class="fa-solid fa-quote-left" style="color:black"></i><p class="font-weight-light font-italic"><%= bookmark.comment %></p>
+            <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
           </div>
         </div>
       </div>
