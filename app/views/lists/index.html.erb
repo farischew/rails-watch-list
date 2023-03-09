@@ -7,6 +7,9 @@
 <hr>
 
 <div class="container">
+<div class="d-flex justify-content-end">
+  <%= link_to "Create a movie list", new_list_path , class: "btn btn-primary p-8" %>
+</div>
   <div class="cards">
     <% @lists.each do |list| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
