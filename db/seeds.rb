@@ -16,11 +16,3 @@ puts 'Creating Movie 3'
 Movie.create(title: "Titanic", overview: "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic.", poster_url: "https://image.tmdb.org/t/p/original/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg", rating: 7.9)
 puts 'Creating Movie 4'
 Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century.", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
-
-
-puts 'Creating List 1'
-List.create(name: 'All time favourites', list_url: "https://hips.hearstapps.com/hmg-prod/images/hbz-classic-movies-00-index-new-1591823486.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*")
-puts 'Creating List 2'
-List.create(name: 'Superhero Movies', list_url: "https://www.rollingstone.com/wp-content/uploads/2022/06/SuperHero_new.jpg")
-puts 'Creating List 3'
-List.create(name: 'Action Movies', list_url: "https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/12/10-most-violent-action-movies-of-all-time-according-to-reddit.png")
