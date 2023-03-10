@@ -12,10 +12,9 @@
 
 <hr>
 
-<div class="container position-relative" style="top:120px">
-  <div class="cards">
+<div class="container" style="top:120px">
+  <div class="cards position-relative">
     <% @bookmarks.each do |bookmark| %>
-      <div class="card-category">
         <div class="card-trip">
           <%= image_tag "https://image.tmdb.org/t/p/w500/#{@movies.find(bookmark.movie_id).poster_url}" %>
           <div class="card-trip-infos">
@@ -28,7 +27,6 @@
             <i class="fa-solid fa-quote-left" style="color:black"></i><p class="font-weight-light font-italic"><%= bookmark.comment %></p>
             <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
           </div>
-        </div>
       </div>
     <% end %>
   </div>
