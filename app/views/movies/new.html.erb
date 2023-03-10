@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>New movie</h1>
+  <%= simple_form_for [@movie] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Submit new list", class: "btn btn-primary" %>
+  <% end %>
+</div>
