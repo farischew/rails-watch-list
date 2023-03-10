@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
 
   resources :bookmarks, only: [:destroy]
+  resources :movies, only: [:new, :create]
 end
