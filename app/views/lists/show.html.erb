@@ -17,7 +17,7 @@
     <% @bookmarks.each do |bookmark| %>
       <div class="card-category">
         <div class="card-trip">
-          <img src="<%= @movies.find(bookmark.movie_id).poster_url %>" />
+          <%= image_tag "https://image.tmdb.org/t/p/w500/#{@movies.find(bookmark.movie_id).poster_url}" %>
           <div class="card-trip-infos">
             <div>
               <h2><%= @movies.find(bookmark.movie_id).title %>  |  <%= @movies.find(bookmark.movie_id).rating %> ⭐️</h2>
