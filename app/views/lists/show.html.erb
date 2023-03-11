@@ -14,21 +14,23 @@
 
 <div class="container" style="top:120px">
   <div class="cards position-relative">
-    <% @bookmarks.each do |bookmark| %>
-        <div class="card-trip">
-          <%= image_tag "https://image.tmdb.org/t/p/w500/#{@movies.find(bookmark.movie_id).poster_url}"%>
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= @movies.find(bookmark.movie_id).title %>  |  <%= @movies.find(bookmark.movie_id).rating %> ⭐️</h2>
-              <p><%= @movies.find(bookmark.movie_id).overview %></p>
+    <% if !@bookmarks.nil? %>
+      <% @bookmarks.each do |bookmark| %>
+          <div class="card-trip">
+            <%= image_tag "https://image.tmdb.org/t/p/w500/#{@movies.find(bookmark.movie_id).poster_url}"%>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= @movies.find(bookmark.movie_id).title %>  |  <%= @movies.find(bookmark.movie_id).rating %> ⭐️</h2>
+                <p><%= @movies.find(bookmark.movie_id).overview %></p>
+              </div>
             </div>
-          </div>
 
-          <div class="card-footer">
-            <i class="fa-solid fa-quote-left" style="color:black"></i><p class="font-weight-light font-italic"><%= bookmark.comment %></p>
-            <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-          </div>
-      </div>
+            <div class="card-footer">
+              <i class="fa-solid fa-quote-left" style="color:black"></i><p class="font-weight-light font-italic"><%= bookmark.comment %></p>
+              <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 
@@ -38,6 +40,7 @@
 
   <div class="d-flex justify-content-evenly align-items-start">
     <div class="d-flex flex-column w-50">
+    <% if !@reviews.nil? %>
       <% @reviews.each  do |review| %>
         <div class="card-review">
           <div class="d-flex gap-3">
@@ -54,6 +57,7 @@
             <%= review.comment %>
         </div>
       <% end %>
+    <% end %>
     </div>
 
     <div class="w-50">
