@@ -23,6 +23,7 @@
               <p><%= @movies.find(bookmark.movie_id).overview %></p>
             </div>
           </div>
+
           <div class="card-footer">
             <i class="fa-solid fa-quote-left" style="color:black"></i><p class="font-weight-light font-italic"><%= bookmark.comment %></p>
             <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
