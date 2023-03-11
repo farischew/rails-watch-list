@@ -30,4 +30,27 @@
       </div>
     <% end %>
   </div>
+
+  <hr>
+
+  <h2>Reviews</h2>
+
+  <div class="cards position-relative">
+    <% @reviews.each  do |review| %>
+      <div class="card-review">
+        <div class="div d-flex gap-3">
+          <div>
+            <% review.rating.to_i.times do  %>
+              <i class="fa-sharp fa-solid fa-star" style="color: gold"></i>
+            <% end %>
+            <% (5 - review.rating.to_i).times do %>
+              <i class="fa-sharp fa-regular fa-star" style="color: gold"></i>
+            <% end %>
+          </div>
+          <p><%= time_ago_in_words(review.created_at) %></p>
+        </div>
+          <%= review.comment %>
+      </div>
+    <% end %>
+  </div>
 </div>

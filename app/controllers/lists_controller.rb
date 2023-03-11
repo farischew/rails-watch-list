@@ -9,7 +9,6 @@ class ListsController < ApplicationController
     @movies = Movie.all
     @bookmarks = Bookmark.find_all(params[:id].to_i)
     @reviews = Review.find_all(params[:id].to_i)
-    raise
   end
 
   def new
