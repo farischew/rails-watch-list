@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to list_path(@list)
     else
-      render :new, status: :unprocessable_entity
+      render partial: '/shared/form', locals: {list: @list, review: @review }, status: :unprocessable_entity
     end
   end
 

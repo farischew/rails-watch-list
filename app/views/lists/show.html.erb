@@ -35,27 +35,32 @@
 
   <h2>Reviews</h2>
 
-  <div class="cards position-relative">
-    <% @reviews.each  do |review| %>
-      <div class="card-review">
-        <div class="div d-flex gap-3">
+  <div class="d-flex justify-content-evenly align-items-start">
+    <div class="d-flex flex-column w-50">
+      <% @reviews.each  do |review| %>
+        <div class="card-review">
           <div>
-            <% review.rating.to_i.times do  %>
-              <i class="fa-sharp fa-solid fa-star" style="color: gold"></i>
-            <% end %>
-            <% (5 - review.rating.to_i).times do %>
-              <i class="fa-sharp fa-regular fa-star" style="color: gold"></i>
-            <% end %>
+            <div>
+              <% review.rating.to_i.times do  %>
+                <i class="fa-sharp fa-solid fa-star" style="color: gold"></i>
+              <% end %>
+              <% (5 - review.rating.to_i).times do %>
+                <i class="fa-sharp fa-regular fa-star" style="color: gold"></i>
+              <% end %>
+            </div>
+            <p><%= time_ago_in_words(review.created_at) %></p>
           </div>
-          <p><%= time_ago_in_words(review.created_at) %></p>
+            <%= review.comment %>
         </div>
-          <%= review.comment %>
-      </div>
+      <% end %>
+    </div>
 
-      <div>
-        <% @review = Review.new  %>
-        <%= render partial: "/shared/form", locals: {list: @list, review: @review } %>
-      </div>
-    <% end %>
+    <div class="w-50">
+      <% @review = Review.new  %>
+      <%= render partial: "/shared/form", locals: {list: @list, review: @review } %>
+    </div>
   </div>
+
+
+
 </div>
