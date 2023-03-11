@@ -51,6 +51,11 @@
         </div>
           <%= review.comment %>
       </div>
+
+      <div>
+        <% @review = Review.new  %>
+        <%= render partial: "/shared/form", locals: {list: @list, review: @review } %>
+      </div>
     <% end %>
   </div>
 </div>
